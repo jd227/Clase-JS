@@ -1,0 +1,51 @@
+/* Estilo para el título */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de las imágenes */
+div {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre las imágenes */
+    margin-bottom: 20px;
+}
+
+/* Estilo para las imágenes */
+img {
+    width: 20%;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto 3D */
+}
+
+/* Estilo para el texto */
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    max-width: 80%;
+    margin: 0 auto; /* Centrar el texto */
+    padding: 0 10px;
+}
+
+/* Estilo para el botón */
+button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff; /* Color de fondo azul */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición para el hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}

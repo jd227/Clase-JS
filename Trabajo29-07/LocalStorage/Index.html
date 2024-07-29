@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Local Storage</title>
+</head>
+<body>
+    
+    <h1>Formulario de Usuario</h1>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <script>
+        // Cuando se envía el formulario
+        document.getElementById('miFormulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que se recargue la página
+
+            // Obtén los valores de los campos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+
+            // Crea un objeto con los datos del formulario
+            const formularioData = {
+                nombre: nombre,
+                email: email
+            };
+
+            // Guarda el objeto en localStorage como una cadena JSON
+            localStorage.setItem('formularioData', JSON.stringify(formularioData));
+
+            // Mensaje de éxito
+            alert('Datos guardados correctamente en localStorage');
+        });
+
+        // Opcional: Cargar los datos guardados al cargar la página
+        window.addEventListener('load', function() {
+            const formularioData = localStorage.getItem('formularioData');
+
+            if (formularioData) {
+                const data = JSON.parse(formularioData);
+                document.getElementById('nombre').value = data.nombre;
+                document.getElementById('email').value = data.email;
+            }
+        });
+    </script>
+</body>
+</html>
